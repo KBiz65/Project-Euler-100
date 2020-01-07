@@ -24,7 +24,6 @@ num = "73167176531330624919225119674426574742355349194934\
 
 product = 0
 sum = 1
-count = 0
 start_range = 0
 end_range = 13
 temp_string = num[start_range:end_range]
