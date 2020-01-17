@@ -24,7 +24,7 @@ def is_leapyear(year):
 def calc_first_day_of_year(year):
     if is_leapyear(year):
         #difference between year and 1900 will give us the number of days
-        #we move ahead a day. We then need to calculate lear years as
+        #we move ahead a day. We then need to calculate leap years as
         #they will add one additional day. To calculate the first day
         #of the year we would need to take one day away if it's a leapyear
         #becuase the extra day doesn't happen yet during that year.
@@ -67,8 +67,6 @@ def calc_total_first_suns(days):
     for i in range(1901,2001):
         total_first_sundays += calc_first_suns_in_year(i, days)
     return total_first_sundays
-
-
 
 
 days = {0:'mon', 1:'tues', 2:'wed', 3:'thurs', 4:'fri', 5:'sat', 6:'sun'}
