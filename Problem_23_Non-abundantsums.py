@@ -20,24 +20,40 @@ def create_abundant_nums_list():
 
     for i in range(1, 28124):
         num_check = get_factors(i)
-        if num_check > 0:
-            abundant_nums_list.append(num_check)
+        if num_check > i:
+            abundant_nums_list.append(i)
 
     return abundant_nums_list
 
-def get_factors(number):
+def get_factors(factor):
     i = 2
     factors_list = [1]
     while i*i <= factor:
         if factor % i == 0:
-           factors_list.append(i)
-           factors_list.append(number // i)
+            factors_list.append(i)
+            if i*i < factor:
+                factors_list.append(factor // i)
         i += 1
     abundant_num = sum(factors_list)
         
     return abundant_num
 
+def pos_int_sum_not_prod_abund_num():
+    abundant_nums_list = create_abundant_nums_list()
+    pos_nums_to_sum = 0
+    sums_set = set()
+
+    for i in abundant_nums_list:
+        for j in abundant_nums_list:
+            sums_set.add(i + j)
+    
+    for i in range(1, 28124):
+        if i not in sums_set:
+            pos_nums_to_sum += i
+    return pos_nums_to_sum
+
+
 start = time.time()
-total_score = get_names_score('Problem_22_namesfile.txt')
+total_sum = pos_int_sum_not_prod_abund_num()
 elapsed = (time.time() - start)
-print("result %s returned in %s seconds." % (total_score,elapsed))
+print("result %s returned in %s seconds." % (total_sum,elapsed))
