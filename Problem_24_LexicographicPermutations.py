@@ -13,7 +13,6 @@ def get_perm_nums():
     return [[int(''.join(str(i) for i in x))] for x in permutations('0123456789',10)]
 
 def list_of_permu_nums():
-    permu_nums_list = sorted(get_perm_nums())
     millionth_num = permu_nums_list[999999]
     return millionth_num #return the millionth permutation
     
