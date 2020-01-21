@@ -43,6 +43,7 @@ def pos_int_sum_not_prod_abund_num():
     pos_nums_to_sum = 0
     sums_set = set()
 
+#creating a set for the sums of each abundant number added to each of the others
     for i in abundant_nums_list:
         for j in abundant_nums_list:
             sums_set.add(i + j)
